@@ -1,1 +1,35 @@
 
+p {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  color: #d52727;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 2rem;
+}
+h1 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 34px;
+  color: #f7f7f7;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 2rem;
+}
+
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 0px;
+  padding: 20px;
+}
+
+img {
+  max-width: 250px;
+  height: auto;
+}
+
+img:hover {
+  max-width: 5000rem;
+  height: auto;
+}
