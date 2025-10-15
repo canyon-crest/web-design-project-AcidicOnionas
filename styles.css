@@ -16,11 +16,28 @@ h1 {
   text-shadow: 2rem;
 }
 
+h2 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 28px;
+  color: #f7f7f7;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 2rem;
+}
+h3 {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  color: #f7f7f7;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 2rem;
+}
+.bg-wraf {
+  background: tomato;
+  padding: 10px 0; /* For clarity */
+}
 .city {
-  background-color: tomato;
-  color: white;
-  border: 2px solid black;
-  margin: 0px;
+  margin: 0;
   padding: 20px;
 }
 .footer {
