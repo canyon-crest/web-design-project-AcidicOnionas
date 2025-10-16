@@ -6,6 +6,7 @@ p {
   line-height: 1.6;
   text-align: justify;
   text-shadow: 2rem;
+  font: bold;
 }
 h1 {
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -47,6 +48,7 @@ h3 {
   place-items: center;
   justify-content: center;
   align-items: center;
+  border: 2px #d52727;
 }
 
 img {
