@@ -54,6 +54,7 @@ h3 {
 img {
   max-width: 250px;
   height: auto;
+  float: left;
 }
 
 img:hover {
