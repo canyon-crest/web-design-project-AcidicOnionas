@@ -38,7 +38,7 @@ h3 {
   border-left: double 10px blue;
   border-radius: 12px;
 }
-#bg-wraf {
+.bg-wraf {
     width:1000px;
     margin: 0 auto;
     background-color: tomato;
