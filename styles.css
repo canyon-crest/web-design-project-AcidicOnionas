@@ -3,27 +3,29 @@ p {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   color: #d52727;
-  line-height: 1.6;
-  text-align: justify;
-  text-shadow: 2rem;
-  font: bold;
+  line-height: 2.2em;
+  padding: 20px;
+  border: 2px dotted black;
 }
 h1 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 34px;
+  font-size: 2.5em;
   color: #f7f7f7;
   line-height: 1.6;
-  text-align: justify;
+  text-align: center;
   text-shadow: 2rem;
+  width: 60%;
+  margin: 0 auto;
 }
 
 h2 {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 28px;
+  font-size: 2.1em;
   color: #f7f7f7;
   line-height: 1.6;
-  text-align: justify;
+  text-align: center;
   text-shadow: 2rem;
+
 }
 h3 {
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -32,12 +34,20 @@ h3 {
   line-height: 1.6;
   text-align: justify;
   text-shadow: 2rem;
+  padding-left: 10px;
+  border-left: double 10px blue;
+  border-radius: 12px;
 }
-.bg-wraf {
-  background: tomato;
-  padding: 10px 0; /* For clarity */
+#bg-wraf {
+    width:1000px;
+    margin: 0 auto;
+    background-color: tomato;
+    border: 5px double white
 }
-.city {
+#sidebar{
+
+}
+.side {
   margin: 0;
   padding: 20px;
 }
@@ -48,26 +58,50 @@ h3 {
   place-items: center;
   justify-content: center;
   align-items: center;
-  border: 2px #d52727;
 }
 
 img {
-  max-width: 250px;
-  height: auto;
-  float: left;
+    width: 10em;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 15px;
+    float: left;
+    margin-right: 20px;
 }
 
 img:hover {
-  animation: float-up-down 0.01s ease-in-out infinite alternate;
+  animation: float-up-down 3s ease-in-out infinite alternate;
 }
 @keyframes float-up-down {
   0% {
     transform: translateY(0); /* Starting position */
   }
   50% {
-    transform: translateY(-10px); /* Moves up 20px */
+    transform: translateY(-5px); /* Moves up 5px */
   }
   100% {
     transform: translateY(0); /* Returns to starting position */
+  }
+}
+@media (max-width:1200px){
+  #bg-wraf {
+    background-color: #26fa00;
+    width:800px;
+  }
+}
+@media (max-width: 992px){
+  #bg-wraf {
+    background-color: #faf200;
+    width:100%;
+  }
+  body, p, #bg-wraf{
+    margin:0;
+    border:none;
+    padding:0;
+  }
+}
+@media (max-width: 768px) {
+  #sidebar{
+    display: none;
   }
 }
