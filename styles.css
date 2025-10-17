@@ -84,13 +84,13 @@ img:hover {
   }
 }
 @media (max-width:1200px){
-  #bg-wraf {
+  .bg-wraf {
     background-color: #26fa00;
     width:800px;
   }
 }
 @media (max-width: 992px){
-  #bg-wraf {
+  .bg-wraf {
     background-color: #faf200;
     width:100%;
   }
