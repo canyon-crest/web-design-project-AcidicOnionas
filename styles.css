@@ -5,7 +5,14 @@ p {
   color: #fefffa;
   line-height: 2.2em;
   padding: 20px;
-  border: 2px dotted black;
+}
+
+/* Class rules for highlighting important text within paragraphs */
+.highlight {
+  background-color: rgba(255, 235, 59, 0.3);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-style: italic;
 }
 h1 {
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -44,56 +51,274 @@ h3 {
 .bg-wraf {
     width:1000px;
     margin: 0 auto;
-    background: linear-gradient(180deg, #00ffff, #0080ff, #5e5bff, #00ff80, #00ffff);
-    background-size: 100% 200%;
+    background: #000000;
     border: 5px double white;
-    animation: smoothRainbow 10s linear infinite;
+    position: relative;
+    overflow: hidden;
 }
-@keyframes smoothRainbow {
+
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.ripple1 {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 30%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.6) 0%, rgba(0, 255, 255, 0.35) 30%, transparent 70%);
+    animation: ripple1 5s ease-out infinite;
+}
+
+/* Second ripple - blue */
+.ripple2 {
+    width: 300px;
+    height: 300px;
+    top: 60%;
+    right: 25%;
+    background: radial-gradient(circle, rgba(0, 128, 255, 0.6) 0%, rgba(0, 128, 255, 0.35) 30%, transparent 70%);
+    animation: ripple2 6s ease-out infinite 2s;
+}
+
+/* Third ripple - purple */
+.ripple3 {
+    width: 250px;
+    height: 250px;
+    top: 40%;
+    left: 70%;
+    background: radial-gradient(circle, rgba(94, 91, 255, 0.65) 0%, rgba(94, 91, 255, 0.4) 30%, transparent 70%);
+    animation: ripple3 7s ease-out infinite 3s;
+}
+
+/* Fourth ripple - green */
+.ripple4 {
+    width: 350px;
+    height: 350px;
+    top: 10%;
+    right: 15%;
+    background: radial-gradient(circle, rgba(0, 255, 128, 0.65) 0%, rgba(0, 255, 128, 0.4) 30%, transparent 70%);
+    animation: ripple4 8s ease-out infinite 5s;
+}
+
+/* Fifth ripple - cyan */
+.ripple5 {
+    width: 280px;
+    height: 280px;
+    bottom: 15%;
+    left: 15%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.6) 0%, rgba(0, 255, 255, 0.35) 30%, transparent 70%);
+    animation: ripple5 6.5s ease-out infinite 7s;
+}
+
+
+@keyframes ripple1 {
   0% {
-    background-position: 0% 0%;
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.5;
   }
   100% {
-    background-position: 0% 200%;
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple2 {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple3 {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    transform: scale(3);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple4 {
+  0% {
+    transform: scale(0.25);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  55% {
+    transform: scale(2.2);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple5 {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  65% {
+    transform: scale(2.6);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3.1);
+    opacity: 0;
   }
 }
 #sidebar{
-    background-color: #dedede;
+    background-color: rgba(255, 255, 255, 0.05);
     width: 200px;
     line-height: 1.5em;
     border: 2px solid white;
+    border-radius: 5px;
     float:right;
     margin: 20px;
     margin-top:75px;
+    backdrop-filter: blur(5px);
+    padding: 15px;
   }
+#sidebar h3 {
+    color: white;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+}
+#sidebar li {
+    color: white;
+    padding: 5px 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
 .side {
   margin: 0;
   padding: 20px;
+  position: relative;
+  z-index: 10;
 }
 .footer {
-  background-color: rgb(0, 242, 255);
+  background: black;
   color: white;
-  display: grid; /* Defines the element as a grid container */
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-  place-items: center;
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   min-height: 150px;
+  position: relative;
+  z-index: 10;
+  border-top: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 -5px 20px rgba(0, 128, 255, 0.2);
 }
 
-button {
-  background-color:white;
-  padding-top: 3px;
-  border: solid 1px black;
-  border-radius: 9px;
+a:link {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
-button:hover {
-  background-color:rgb(222, 222, 222);
-  padding-top: 3px;
-  border: solid 1px black;
-  border-radius: 9px;
+
+a:visited {
+  color: #9370db;
+  text-decoration: none;
 }
-img {
+
+a:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+
+.icon-button {
+  background-color: white;
+  padding: 8px;
+  border: solid 2px black;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin: 0 5px;
+}
+
+.icon-button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.icon-button:hover {
+  background-color: rgb(222, 222, 222);
+  transform: scale(1.1);
+}
+
+
+#pic1 {
+    width: 10em;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 15px;
+    float: left;
+    margin-right: 20px;
+    animation: slide 2s ease-in-out;
+}
+
+#pic2 {
+    width: 10em;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 15px;
+    float: right;
+    margin-left: 20px;
+    animation: slide 2s ease-in-out;
+}
+
+#pic3 {
     width: 10em;
     height: auto;
     border: 2px solid white;
@@ -106,20 +331,11 @@ body{
   animation: float-on-page 1s ease-in-out;
 }
 
-img:hover {
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+#pic1:hover, #pic2:hover, #pic3:hover {
+  box-shadow: 5px 5px 15px rgba(248, 248, 248, 0.3);
+  transform: scale(1.02);
 }
-@keyframes float-up-down {
-  0% {
-    transform: translateY(0); /* Starting position */
-  }
-  50% {
-    transform: translateY(-5px); /* Moves up 5px */
-  }
-  100% {
-    transform: translateY(0); /* Returns to starting position */
-  }
-}
+
 @keyframes float-on-page {
   0% {
     transform: translateY(50px);
@@ -147,13 +363,13 @@ img:hover {
 }
 @media (max-width:1200px){
   .bg-wraf {
-    background-color: #26fa00;
+    background: #000000;
     width:800px;
   }
 }
 @media (max-width: 992px){
   .bg-wraf {
-    background-color: #faf200;
+    background: #000000;
     width:100%;
   }
   body, p, #bg-wraf{
